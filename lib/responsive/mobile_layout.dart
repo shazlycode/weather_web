@@ -1,0 +1,366 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter/widgets.dart';
+import 'package:weather_web/UI/side_drawer.dart';
+
+class MobileLayout extends StatefulWidget {
+  const MobileLayout({super.key});
+
+  @override
+  State<MobileLayout> createState() => _MobileLayoutState();
+}
+
+class _MobileLayoutState extends State<MobileLayout> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        backgroundColor: Colors.blue[50],
+        appBar: AppBar(),
+        drawer: SideDrawer(),
+        body: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: ListView(
+            children: [
+              Card(
+                elevation: 5,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Container(
+                  padding: EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10)),
+                  height: 200,
+                  width: double.infinity,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          Text("Current Weather"),
+                          Spacer(),
+                          Text("Celisus"),
+                          Icon(Icons.keyboard_arrow_down_rounded)
+                        ],
+                      ),
+                      Text(
+                        "2:59 PM",
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      Row(
+                        children: [
+                          Expanded(
+                              flex: 1,
+                              child: Row(
+                                children: [
+                                  SizedBox(
+                                      width: 80,
+                                      child: Image.asset(
+                                          "assets/images/weathericon.jpg")),
+                                  Text(
+                                    "23",
+                                    style: TextStyle(
+                                        fontSize: 35,
+                                        fontWeight: FontWeight.bold),
+                                  )
+                                ],
+                              )),
+                          Expanded(
+                            flex: 2,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text("Rainy"),
+                                Text("Feels Like 35"),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                      Text(
+                          "There will be mostly sunny skies. The high will be 35")
+                    ],
+                  ),
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Expanded(
+                    child: Card(
+                      elevation: 5,
+                      child: Container(
+                        width: 180,
+                        height: 90,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10)),
+                        child: Row(
+                          children: [
+                            Expanded(child: Icon(Icons.air)),
+                            Expanded(
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text("Air Quality"),
+                                  Text(
+                                    "156",
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Card(
+                      elevation: 5,
+                      child: Container(
+                        width: 180,
+                        height: 90,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10)),
+                        child: Row(
+                          children: [
+                            Expanded(child: Icon(Icons.wind_power)),
+                            Expanded(
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text("Wind"),
+                                  Text(
+                                    "1 mph",
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Card(
+                      elevation: 5,
+                      child: Container(
+                        width: 180,
+                        height: 90,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10)),
+                        child: Row(
+                          children: [
+                            Expanded(child: Icon(Icons.water_drop_outlined)),
+                            Expanded(
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text("Humidity"),
+                                  Text(
+                                    "54%",
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Expanded(
+                    child: Card(
+                      elevation: 5,
+                      child: Container(
+                        width: 180,
+                        height: 90,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10)),
+                        child: Row(
+                          children: [
+                            Expanded(
+                                child: Icon(Icons.remove_red_eye_outlined)),
+                            Expanded(
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text("Visibility"),
+                                  Text(
+                                    "3 mi",
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Card(
+                      elevation: 5,
+                      child: Container(
+                        width: 180,
+                        height: 90,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10)),
+                        child: Row(
+                          children: [
+                            Expanded(child: Icon(Icons.compress)),
+                            Expanded(
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text("Pressure"),
+                                  Text(
+                                    "1.2 Pa",
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Card(
+                      elevation: 5,
+                      child: Container(
+                        width: 180,
+                        height: 90,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10)),
+                        child: Row(
+                          children: [
+                            Expanded(child: Icon(Icons.restore_page_rounded)),
+                            Expanded(
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text("Responsibility"),
+                                  Text(
+                                    "95.2%",
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+              SizedBox(
+                height: 600,
+                width: 400,
+                child: DefaultTabController(
+                    length: 3,
+                    child: Scaffold(
+                      appBar: TabBar(tabs: [
+                        Tab(text: "Today"),
+                        Tab(
+                          text: "Tomorrow",
+                        ),
+                        Tab(
+                          text: "10 Days",
+                        )
+                      ]),
+                      body: TabBarView(
+                        physics: BouncingScrollPhysics(),
+                        children: [
+                          ListView.builder(
+                              itemCount: 11,
+                              itemBuilder: (context, index) {
+                                return Container(
+                                  child: Row(
+                                    children: [
+                                      Expanded(
+                                          flex: 1,
+                                          child: SizedBox(
+                                            height: 100,
+                                            width: 100,
+                                            child: Image.asset(
+                                                "assets/images/weathericon.jpg"),
+                                          )),
+                                      Expanded(
+                                          flex: 2,
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text("${index + 1} AM"),
+                                              Text("Mostly Cloudy")
+                                            ],
+                                          ))
+                                    ],
+                                  ),
+                                );
+                              }),
+                          ListView.builder(
+                              itemCount: 10,
+                              itemBuilder: (context, index) {
+                                return Row(
+                                  children: [
+                                    Expanded(
+                                        flex: 1,
+                                        child: SizedBox(
+                                          height: 100,
+                                          width: 100,
+                                          child: Image.asset(
+                                              "assets/images/weathericon.jpg"),
+                                        )),
+                                    Expanded(
+                                        flex: 2,
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text("${index + 2} AM"),
+                                            Text("Mostly Cloudy")
+                                          ],
+                                        ))
+                                  ],
+                                );
+                              }),
+                          Text("10 Days Weather Forecast")
+                        ],
+                      ),
+                    )),
+              ),
+            ],
+          ),
+        ));
+  }
+}
